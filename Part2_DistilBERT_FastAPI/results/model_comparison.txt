@@ -1,0 +1,35 @@
+MODEL COMPARISON - CATEGORY CLASSIFICATION
+
+| Model | Accuracy | Macro F1 | Training Time | Inference Time per Ticket |
+|---|---:|---:|---:|---:|
+| TF-IDF + Logistic Regression | 1.0000 | 1.0000 | 0.0324 s | 0.000021 s |
+| DistilBERT | 1.0000 | 1.0000 | 290.45 s | 0.053588 s |
+
+5-LINE JUSTIFICATION
+
+1. Both TF-IDF + Logistic Regression and DistilBERT achieved 1.0000 accuracy and 1.0000 Macro F1 on the test set.
+2. DistilBERT required significantly more training time than the TF-IDF baseline.
+3. The TF-IDF model also provides much faster inference, making it more suitable for a real-time ticket classification API.
+4. DistilBERT may be useful when the dataset contains more complex language or when semantic understanding improves classification.
+5. For this project, TF-IDF + Logistic Regression is selected for deployment because it provides the same performance with much lower cost and latency.
+PRIORITY MODEL RESULTS
+
+| Model | Test Accuracy | Test Macro F1 | Training Time | Inference Time per Ticket |
+|---|---:|---:|---:|---:|
+| TF-IDF + Logistic Regression | 0.3647 | 0.3198 | Not timed | Not timed |
+| DistilBERT | 0.6000 | 0.2500 | 262.49 s | 0.055325 s |
+
+PRIORITY ANALYSIS
+
+DistilBERT achieved higher accuracy than the balanced TF-IDF baseline on the priority task,
+but its Macro F1 score was lower. This indicates that DistilBERT still struggles with the
+minority priority classes, especially High. The dataset is imbalanced, so Macro F1 is a
+better measure than accuracy for this task. Therefore, DistilBERT does not provide a
+clear enough advantage to justify its higher training and inference cost.
+
+FINAL MODEL SELECTION
+
+The TF-IDF + Logistic Regression model is selected for deployment because it provides
+excellent category classification performance while being significantly faster and
+computationally cheaper than DistilBERT. DistilBERT is retained as an experimental
+comparison model for future use with larger and more complex datasets.

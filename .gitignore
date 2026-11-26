@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# Training checkpoints
+Part2_DistilBERT_FastAPI/results/distilbert_category/checkpoint-*/
+Part2_DistilBERT_FastAPI/results/distilbert_priority/checkpoint-*/
+
+# Hugging Face training artifacts
+Part2_DistilBERT_FastAPI/results/distilbert_category/runs/
+Part2_DistilBERT_FastAPI/results/distilbert_priority/runs/
+Part2_DistilBERT_FastAPI/results/distilbert_category_model/model.safetensors
+Part2_DistilBERT_FastAPI/results/distilbert_priority_model/model.safetensors

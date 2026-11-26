@@ -1,0 +1,22 @@
+TASK 2 - BASELINE MODEL RESULTS
+
+Category Model
+-------------
+Pipeline: TF-IDF + Logistic Regression
+Best ngram_range: (1, 1)
+Best C: 2
+Validation Accuracy: 1.0000
+Validation Macro F1: 1.0000
+
+Priority Model
+--------------
+Pipeline: TF-IDF + Logistic Regression
+Best ngram_range: (1, 1)
+Best C: 2
+Validation Accuracy: 0.3647
+Validation Macro F1: 0.3198
+
+Note:
+Priority classes are imbalanced, with Low having the highest number
+of tickets and High having the fewest tickets. Class-weight balancing
+was tested to improve performance on minority classes.

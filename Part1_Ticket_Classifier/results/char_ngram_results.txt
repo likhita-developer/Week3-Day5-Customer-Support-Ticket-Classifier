@@ -1,0 +1,45 @@
+TASK 2 - BONUS CHALLENGE: CHARACTER N-GRAMS
+
+A character-level TF-IDF model was tested as a comparison with the
+word-level TF-IDF baseline.
+
+Character n-gram configuration:
+Analyzer: char
+N-gram range: (3, 5)
+Model: Logistic Regression
+Class weighting: balanced
+
+Results
+
+Category:
+Validation Accuracy: 1.0000
+Validation Macro F1: 1.0000
+
+Priority:
+Validation Accuracy: 0.4000
+Validation Macro F1: 0.3561
+
+Comparison with Word-Level Baseline
+
+Category:
+Word-level Accuracy: 1.0000
+Word-level Macro F1: 1.0000
+Character n-gram Accuracy: 1.0000
+Character n-gram Macro F1: 1.0000
+
+Priority:
+Word-level Accuracy: 0.3647
+Word-level Macro F1: 0.3198
+Character n-gram Accuracy: 0.4000
+Character n-gram Macro F1: 0.3561
+
+Observation
+
+The character n-gram model produced the same performance as the word-level
+model for category classification.
+
+For priority classification, the character n-gram model improved both
+accuracy and macro F1 compared with the word-level baseline. This suggests
+that character-level features can capture useful patterns in the ticket
+text, although priority classification remains challenging because of
+class imbalance and limited urgency information.

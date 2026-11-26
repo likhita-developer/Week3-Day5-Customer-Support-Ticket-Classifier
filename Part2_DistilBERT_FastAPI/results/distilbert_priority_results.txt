@@ -1,0 +1,8 @@
+DISTILBERT PRIORITY RESULTS
+
+Validation Accuracy: 0.5882
+Validation Macro F1: 0.2469
+Test Accuracy: 0.6000
+Test Macro F1: 0.2500
+Training Time: 262.49 seconds
+Inference Time per Ticket: 0.055325 seconds

@@ -1,0 +1,97 @@
+TASK 2 - PRIORITY ERROR ANALYSIS
+
+The priority model made several mistakes because the ticket text contains
+limited information about urgency. Many tickets describe the problem but
+do not clearly indicate whether the issue is High, Medium, or Low priority.
+The class imbalance also affects prediction performance.
+
+10 Confusing Examples
+
+1. Text:
+please help me unable to sign in. please check and resolve it.
+Actual: Medium
+Predicted: Low
+Reason:
+The ticket describes a login problem but does not contain strong urgency
+words, so the model predicted the majority Low class.
+
+2. Text:
+i need your help with need to update profile. i need this issue resolved.
+Actual: Low
+Predicted: Medium
+Reason:
+The phrase "need this issue resolved" may make the model interpret the
+ticket as more urgent than it actually is.
+
+3. Text:
+could you please help problem with account. please help me as soon as possible.
+Actual: Medium
+Predicted: Low
+Reason:
+The ticket has an account-related problem, but the wording does not clearly
+distinguish Medium from Low priority.
+
+4. Text:
+i am facing an issue where need help updating account. kindly check my account.
+Actual: Medium
+Predicted: Low
+Reason:
+The request is polite and general without strong urgency indicators.
+
+5. Text:
+could you please help password is not working. please help me as soon as possible.
+Actual: Low
+Predicted: Medium
+Reason:
+The phrase "as soon as possible" may cause the model to assign a higher
+priority even though the actual label is Low.
+
+6. Text:
+i am unable to resolve this issue because page is not loading. please provide a solution.
+Actual: Medium
+Predicted: Low
+Reason:
+The ticket describes a technical problem but does not provide clear
+priority-related words.
+
+7. Text:
+could you please help order is delayed. i have been facing this problem recently.
+Actual: Low
+Predicted: Medium
+Reason:
+The word "delayed" can suggest urgency, causing the model to predict
+Medium instead of Low.
+
+8. Text:
+i need assistance because application is not working. this problem started today.
+Actual: Medium
+Predicted: Low
+Reason:
+The model recognizes the problem but the text does not contain enough
+information to determine the priority correctly.
+
+9. Text:
+please check this problem payment was declined. can you look into this?
+Actual: Medium
+Predicted: Low
+Reason:
+The payment issue identifies the category clearly, but there is little
+information about urgency or customer impact.
+
+10. Text:
+i need your help with order has not arrived. this problem started today.
+Actual: Medium
+Predicted: Low
+Reason:
+The ticket describes an order problem but does not explicitly indicate
+high urgency, business impact, or time sensitivity.
+
+Overall Observation
+
+Category classification performs very well because ticket text contains
+clear keywords related to each category. Priority classification is more
+difficult because the dataset contains fewer High-priority examples and
+many tickets use similar general support language.
+
+The class-weighted Logistic Regression model improved macro F1 for the
+priority classes, but overall priority prediction remains challenging.
